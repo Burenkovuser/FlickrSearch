@@ -40,6 +40,19 @@
     self.title = self.viewModel.title;
     RAC(self.viewModel, searchText) = self.searchTextField.rac_textSignal;//передается сигнал от том что вводит пользователь
     self.searchButton.rac_command = self.viewModel.executeSearch;
+    
+    //когда выполняется команда индикатор (куртилка) покажет себя
+    RAC([UIApplication sharedApplication], networkActivityIndicatorVisible) =
+    self.viewModel.executeSearch.executing;
+    //скрываем индиктор
+    RAC(self.loadingIndicator, hidden) =
+    [self.viewModel.executeSearch.executing not];
+    
+    //убираем клавиатуру
+    [self.viewModel.executeSearch.executionSignals
+     subscribeNext:^(id x) {
+         [self.searchTextField resignFirstResponder];
+     }];
 }
 
 @end
