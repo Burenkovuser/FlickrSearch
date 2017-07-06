@@ -4,7 +4,11 @@
 //
 
 @import UIKit;
+#import "RWTFlickrSearchViewModel.h"
 
 @interface RWTFlickrSearchViewController : UIViewController
+
+- (instancetype)initWithViewModel:(RWTFlickrSearchViewModel *)viewModel;
+
 
 @end

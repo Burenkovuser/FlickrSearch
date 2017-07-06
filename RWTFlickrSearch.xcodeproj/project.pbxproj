@@ -31,6 +31,7 @@
 		72E401BE192C050F00354806 /* RWTSearchResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E401BC192C050F00354806 /* RWTSearchResultsTableViewCell.m */; };
 		72E401BF192C050F00354806 /* RWTSearchResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72E401BD192C050F00354806 /* RWTSearchResultsTableViewCell.xib */; };
 		B43045EC015882DAF347FAA3 /* Pods_RWTFlickrSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9264A8FD357749D88EE293D2 /* Pods_RWTFlickrSearch.framework */; };
+		FBE83F931F0DFAE400E8266C /* RWTFlickrSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE83F921F0DFAE400E8266C /* RWTFlickrSearchViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		72E401BD192C050F00354806 /* RWTSearchResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWTSearchResultsTableViewCell.xib; sourceTree = "<group>"; };
 		9264A8FD357749D88EE293D2 /* Pods_RWTFlickrSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RWTFlickrSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F617FEF18976F351F78C6AAD /* Pods-RWTFlickrSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RWTFlickrSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RWTFlickrSearch/Pods-RWTFlickrSearch.debug.xcconfig"; sourceTree = "<group>"; };
+		FBE83F911F0DFAE400E8266C /* RWTFlickrSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTFlickrSearchViewModel.h; path = RWTFlickrSearch/RWTFlickrSearchViewModel.h; sourceTree = SOURCE_ROOT; };
+		FBE83F921F0DFAE400E8266C /* RWTFlickrSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTFlickrSearchViewModel.m; path = RWTFlickrSearch/RWTFlickrSearchViewModel.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +220,8 @@
 		72E401C0192C82C100354806 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FBE83F911F0DFAE400E8266C /* RWTFlickrSearchViewModel.h */,
+				FBE83F921F0DFAE400E8266C /* RWTFlickrSearchViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				72E401B9192C03AB00354806 /* RWTSearchResultsViewController.m in Sources */,
 				728550B5193E52740032A754 /* CETableViewBindingHelper.m in Sources */,
 				72E401B4192C03AB00354806 /* RWTFlickrSearchViewController.m in Sources */,
+				FBE83F931F0DFAE400E8266C /* RWTFlickrSearchViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
