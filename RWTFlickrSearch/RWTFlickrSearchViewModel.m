@@ -7,6 +7,7 @@
 //
 
 #import "RWTFlickrSearchViewModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation RWTFlickrSearchViewModel
 
@@ -19,8 +20,28 @@
 }
 
 - (void)initialize {
-    self.searchText = @"search text";
     self.title = @"Flickr Search";
+    RACSignal *validSearchSignal = [[RACObserve(self, searchText)
+                                    map:^id(NSString *text) {
+                                        return @(text.length > 3);}]
+                                    distinctUntilChanged];
+    [validSearchSignal subscribeNext:^(id x) {
+        NSLog(@"search text is valid %@", x);
+    }];
+    
+    //создает команду, которая включается, когда validSearchSignal  истинный.
+    self.executeSearch =
+    [[RACCommand alloc] initWithEnabled:validSearchSignal
+                            signalBlock:^RACSignal *(id input) {
+                                return  [self executeSearchSignal];
+                            }];
+}
+
+- (RACSignal *)executeSearchSignal {
+    return [[[[RACSignal empty]
+              logAll]
+             delay:2.0]
+            logAll];
 }
 
 @end

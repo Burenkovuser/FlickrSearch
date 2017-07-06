@@ -291,7 +291,7 @@
 			attributes = {
 				CLASSPREFIX = RWT;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = "Colin Eberhardt";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					72E4018C192BFFCE00354806 = {
 						TestTargetID = 72E4016B192BFFCE00354806;

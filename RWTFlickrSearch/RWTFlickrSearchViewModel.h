@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface RWTFlickrSearchViewModel : NSObject
 
 @property(nonatomic, strong) NSString *searchText;
 @property(nonatomic, strong) NSString * title;
+@property (strong, nonatomic) RACCommand *executeSearch;//RACCommand это и сигнал действия пользователя и одновременно текущие состояние интерфейса
 
 @end
