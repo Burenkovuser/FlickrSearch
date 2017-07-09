@@ -12,6 +12,8 @@
 @protocol RWTViewModelServices <NSObject>
 
 - (id<RWTFlickrSearch>) getFlickrSearchService;
+- (void)pushViewModel:(id)viewModel;
+
 
 @end
 //чтобы получить ссылку на реализацию протокола RWTFlickrSearch.

@@ -36,6 +36,7 @@
 		FBE83F9B1F0E500E00E8266C /* RWTViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE83F9A1F0E500E00E8266C /* RWTViewModelServicesImpl.m */; };
 		FBE83F9E1F0F4A9F00E8266C /* RWTFlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE83F9D1F0F4A9F00E8266C /* RWTFlickrPhoto.m */; };
 		FBE83FA11F0F4B3600E8266C /* RWTFlickrSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE83FA01F0F4B3600E8266C /* RWTFlickrSearchResults.m */; };
+		FBE840111F11E68D00E8266C /* RWTSearchResultsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE840101F11E68D00E8266C /* RWTSearchResultsViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		FBE83F9D1F0F4A9F00E8266C /* RWTFlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTFlickrPhoto.m; path = RWTFlickrSearch/RWTFlickrPhoto.m; sourceTree = SOURCE_ROOT; };
 		FBE83F9F1F0F4B3600E8266C /* RWTFlickrSearchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTFlickrSearchResults.h; path = RWTFlickrSearch/RWTFlickrSearchResults.h; sourceTree = SOURCE_ROOT; };
 		FBE83FA01F0F4B3600E8266C /* RWTFlickrSearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTFlickrSearchResults.m; path = RWTFlickrSearch/RWTFlickrSearchResults.m; sourceTree = SOURCE_ROOT; };
+		FBE8400F1F11E68D00E8266C /* RWTSearchResultsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTSearchResultsViewModel.h; path = RWTFlickrSearch/RWTSearchResultsViewModel.h; sourceTree = SOURCE_ROOT; };
+		FBE840101F11E68D00E8266C /* RWTSearchResultsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTSearchResultsViewModel.m; path = RWTFlickrSearch/RWTSearchResultsViewModel.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +242,8 @@
 				FBE83F911F0DFAE400E8266C /* RWTFlickrSearchViewModel.h */,
 				FBE83F921F0DFAE400E8266C /* RWTFlickrSearchViewModel.m */,
 				FBE83F981F0E49BE00E8266C /* RWTViewModelServices.h */,
+				FBE8400F1F11E68D00E8266C /* RWTSearchResultsViewModel.h */,
+				FBE840101F11E68D00E8266C /* RWTSearchResultsViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				72E4017C192BFFCE00354806 /* main.m in Sources */,
 				72E401B9192C03AB00354806 /* RWTSearchResultsViewController.m in Sources */,
 				728550B5193E52740032A754 /* CETableViewBindingHelper.m in Sources */,
+				FBE840111F11E68D00E8266C /* RWTSearchResultsViewModel.m in Sources */,
 				72E401B4192C03AB00354806 /* RWTFlickrSearchViewController.m in Sources */,
 				FBE83F971F0E492D00E8266C /* RWTFlickrSearchImpl.m in Sources */,
 				FBE83F9B1F0E500E00E8266C /* RWTViewModelServicesImpl.m in Sources */,
