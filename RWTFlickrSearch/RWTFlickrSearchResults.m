@@ -12,7 +12,7 @@
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"searchString=%@, totalresults=%lU, photos=%@",
-            self.searchString, self.totalResults, self.photos];
+            self.searchString, (unsigned long)self.totalResults, self.photos];
 }
 
 @end

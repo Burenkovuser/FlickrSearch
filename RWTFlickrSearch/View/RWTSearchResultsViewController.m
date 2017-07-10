@@ -5,11 +5,13 @@
 
 #import "RWTSearchResultsViewController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "CETableViewBindingHelper.h"
 
 @interface RWTSearchResultsViewController () <UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *searchResultsTable;
 @property (strong, nonatomic) RWTSearchResultsViewModel *viewModel;
+@property (strong, nonatomic) CETableViewBindingHelper *bindingHelper;
 
 @end
 
@@ -17,12 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.searchResultsTable registerClass:UITableViewCell.class
-                    forCellReuseIdentifier:@"cell"];
-    self.searchResultsTable.dataSource = self;
-    
     [self bindViewModel];
+    
+    UINib *nib = [UINib nibWithNibName:@"RWTSearchResultsTableViewCell" bundle:nil];
+    
+    self.bindingHelper =
+    [CETableViewBindingHelper bindingHelperForTableView:self.searchResultsTable
+                                           sourceSignal:RACObserve(self.viewModel, searchResults)
+                                       selectionCommand:nil
+                                           templateCell:nib];
 }
 
 - (instancetype)initWithViewModel:(RWTSearchResultsViewModel *)viewModel {
@@ -47,5 +52,7 @@
     cell.textLabel.text = [self.viewModel.searchResults[indexPath.row] title];
     return cell;
 }
+
+
 
 @end
