@@ -58,10 +58,9 @@
 - (RACSignal *)executeSearchSignal {
     return [[[self.services getFlickrSearchService]
              flickrSearchSignal:self.searchText]
-            doNext:^(id results) {
+            doNext:^(id result) {
                 RWTSearchResultsViewModel *resultsViewModel =
-                [[RWTSearchResultsViewModel alloc] initWithSearchResults:results services:self.services];
-                
+                [[RWTSearchResultsViewModel alloc] initWithSearchResults:result services:self.services];
                 [self.services pushViewModel:resultsViewModel];
             }];
 }

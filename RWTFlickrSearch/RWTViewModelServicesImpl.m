@@ -33,7 +33,7 @@
     }
     return self;
 }
- */
+*/
 
 - (id<RWTFlickrSearch>)getFlickrSearchService {
     return self.searchService;

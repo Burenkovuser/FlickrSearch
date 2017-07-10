@@ -6,7 +6,7 @@
 #import "RWTSearchResultsViewController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface RWTSearchResultsViewController ()
+@interface RWTSearchResultsViewController () <UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *searchResultsTable;
 @property (strong, nonatomic) RWTSearchResultsViewModel *viewModel;
@@ -15,11 +15,37 @@
 
 @implementation RWTSearchResultsViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self.searchResultsTable registerClass:UITableViewCell.class
+                    forCellReuseIdentifier:@"cell"];
+    self.searchResultsTable.dataSource = self;
+    
+    [self bindViewModel];
+}
+
 - (instancetype)initWithViewModel:(RWTSearchResultsViewModel *)viewModel {
     if (self = [super init]) {
         _viewModel = viewModel;
     }
     return self;
+}
+
+- (void)bindViewModel {
+    self.title = self.viewModel.title;
+}
+//источники данных для таблицы
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    return self.viewModel.searchResults.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell.textLabel.text = [self.viewModel.searchResults[indexPath.row] title];
+    return cell;
 }
 
 @end
